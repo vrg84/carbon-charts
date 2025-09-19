@@ -9,6 +9,7 @@ import { ComboChart } from './combo'
 import { DonutChart } from './donut'
 import { GaugeChart } from './gauge'
 import { GroupedBarChart } from './bar-grouped'
+import { GroupedStackedBarChart } from './bar-grouped-stacked'
 import { HeatmapChart } from './heatmap'
 import { HistogramChart } from './histogram'
 import { LineChart } from './line'
@@ -36,6 +37,7 @@ export {
 	DonutChart,
 	GaugeChart,
 	GroupedBarChart,
+	GroupedStackedBarChart,
 	HeatmapChart,
 	HistogramChart,
 	LineChart,
@@ -64,6 +66,7 @@ export type Charts =
 	| DonutChart
 	| GaugeChart
 	| GroupedBarChart
+	| GroupedStackedBarChart
 	| HeatmapChart
 	| HistogramChart
 	| LineChart

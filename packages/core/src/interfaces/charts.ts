@@ -250,6 +250,11 @@ export interface StackedBarChartOptions extends BarChartOptions {
 	bars?: StackedBarOptions
 }
 
+export interface GroupedStackedBarChartOptions extends StackedBarChartOptions {
+	groupedStackedBar: {
+		stackMapsTo: string
+	}
+}
 /**
  * options specific to scatter charts
  */
@@ -635,6 +640,7 @@ export type ChartOptions =
 	| ScatterChartOptions
 	| StackedAreaChartOptions
 	| StackedBarChartOptions
+	| GroupedStackedBarChartOptions
 	| TreeChartOptions
 	| TreemapChartOptions
 	| WordCloudChartOptions

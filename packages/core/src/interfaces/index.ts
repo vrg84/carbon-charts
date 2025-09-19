@@ -40,6 +40,7 @@ export type {
 	ScatterChartOptions,
 	StackedAreaChartOptions,
 	StackedBarChartOptions,
+	GroupedStackedBarChartOptions,
 	ThematicChartOptions,
 	TreemapChartOptions,
 	TreeChartOptions,

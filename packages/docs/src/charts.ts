@@ -14,6 +14,10 @@ import {
 	chartTypesStacked as barStackedTypes,
 	examplesStacked as barStackedExamples
 } from './lib/bar/examplesStacked'
+import {
+	chartTypesGroupedStacked as barGroupedStackedTypes,
+	examplesGroupedStacked as barGroupedStackedExamples
+} from './lib/bar/examplesGroupedStacked'
 import { chartTypes as boxplotTypes, examples as boxplotExamples } from './lib/boxplot'
 import { chartTypes as bubbleTypes, examples as bubbleExamples } from './lib/bubble'
 import { chartTypes as bulletTypes, examples as bulletExamples } from './lib/bullet'
@@ -35,6 +39,10 @@ import { chartTypes as treemapTypes, examples as treemapExamples } from './lib/t
 import { chartTypes as wordcloudTypes, examples as wordcloudExamples } from './lib/wordcloud'
 
 const charts = [
+	{
+		types: barGroupedStackedTypes,
+		examples: barGroupedStackedExamples
+	},
 	{
 		types: alluvialTypes,
 		examples: alluvialExamples

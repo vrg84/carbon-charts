@@ -52,6 +52,7 @@ export {
 	Donut,
 	Gauge,
 	GroupedBar,
+	GroupedStackedBar,
 	Heatmap,
 	Histogram,
 	Line,

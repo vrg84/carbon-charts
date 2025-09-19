@@ -2,6 +2,7 @@ import { enUS as localeObject } from 'date-fns/locale'
 import { merge } from 'lodash-es'
 import { circlePack } from './configuration-non-customizable'
 
+import type { AxesOptions, AxisOptions, TimeScaleOptions } from '@/interfaces/axis-scales'
 import type {
 	AlluvialChartOptions,
 	AreaChartOptions,
@@ -16,10 +17,11 @@ import type {
 	ComboChartOptions,
 	DonutChartOptions,
 	GaugeChartOptions,
+	GroupedStackedBarChartOptions,
 	HeatmapChartOptions,
 	HistogramChartOptions,
-	LollipopChartOptions,
 	LineChartOptions,
+	LollipopChartOptions,
 	MeterChartOptions,
 	PieChartOptions,
 	ProportionalMeterChartOptions,
@@ -29,33 +31,32 @@ import type {
 	ThematicChartOptions,
 	TreeChartOptions,
 	TreemapChartOptions,
-	WordCloudChartTooltipOptions,
-	WordCloudChartOptions
+	WordCloudChartOptions,
+	WordCloudChartTooltipOptions
 } from '@/interfaces/charts'
-import {
-	Alignments,
-	GaugeTypes,
-	LegendPositions,
-	TruncationTypes,
-	ToolbarControlTypes,
-	ZoomBarTypes,
-	LegendItemType,
-	TreeTypes,
-	DividerStatus,
-	Projection,
-	ChartTheme
-} from '@/interfaces/enums'
-import type { AxesOptions, AxisOptions, TimeScaleOptions } from '@/interfaces/axis-scales'
 import type {
 	GridOptions,
-	RulerOptions,
-	TooltipOptions,
 	LegendOptions,
+	Locale,
+	RulerOptions,
 	StackedBarOptions,
 	ToolbarOptions,
-	ZoomBarsOptions,
-	Locale
+	TooltipOptions,
+	ZoomBarsOptions
 } from '@/interfaces/components'
+import {
+	Alignments,
+	ChartTheme,
+	DividerStatus,
+	GaugeTypes,
+	LegendItemType,
+	LegendPositions,
+	Projection,
+	ToolbarControlTypes,
+	TreeTypes,
+	TruncationTypes,
+	ZoomBarTypes
+} from '@/interfaces/enums'
 
 /*
  *****************************
@@ -491,6 +492,12 @@ const stackedBarChart: StackedBarChartOptions = merge({}, baseBarChart, {
 	} as StackedBarOptions)
 } as BarChartOptions)
 
+const groupedStackedBarChart: GroupedStackedBarChartOptions = merge({}, baseBarChart, {
+	groupedStackedBar: {
+		stackMapsTo: 'stack'
+	}
+})
+
 /**
  * options specific to boxplot charts
  */
@@ -822,6 +829,7 @@ export const options = {
 	simpleBarChart,
 	stackedAreaChart,
 	stackedBarChart,
+	groupedStackedBarChart,
 	thematicChart,
 	treeChart,
 	treemapChart,
@@ -846,8 +854,8 @@ export {
 	pie,
 	radar,
 	spacers,
+	toolbar,
 	tooltips,
 	transitions,
-	toolbar,
 	zoomBar
 } from './configuration-non-customizable'
